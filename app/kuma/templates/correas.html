@@ -1,0 +1,39 @@
+{% extends "./base.html" %}
+{% load static %}
+    
+{% block head %}
+    
+{% endblock %}
+
+
+{% block body %}
+  <div class="container">
+    <div class="encabezado">
+      <h1>Correas y arneses</h1>
+    <br>
+    <h3>Para un buen paseo con tu mascota</h3>
+    </div>
+    <div class="row">
+      {% for p in prod %}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{{p.imagen_url.url}}" class="card-image" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{p.nombre}}</h5>
+            <p class="card-text">{{p.descripcion}}</p>
+            <p class="card-text2" data-clp="{{p.precio}}">${{p.precio}}</p>
+            <p class="card-text3">Stock: {{p.stock}}</p>
+            <button id="card-button" class="boton-agregar btn btn-primary">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+{% endblock %}
+
+
+{% block script %}
+    
+{% endblock %}

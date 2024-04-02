@@ -1,0 +1,31 @@
+/*body{
+    width: 100%;
+    height: 100vh;
+    background: #2f0202 ;
+    background: radial-gradient(ellipse at center, #5b720e 0%, #000000);
+    background-size: 100%;
+}*/
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.reloj{
+    display: inline-block;
+    color: #b7b7b7;
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px 0;
+    margin-top: 5px;
+} 
+.tiempo{
+    width: 250px;
+    max-width: 100%;
+    margin: auto;
+    padding-top: 10px 0;
+    margin-top: 5px;
+    font-size: 20px;
+}

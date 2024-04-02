@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+
+	{% load crispy_forms_tags %}
+	<title>Iniciar Sesion | Kuma!</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style-iniciosesion.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	<img class="wave" src="{% static 'img/wave.png'%}">
+	<div class="container">
+		<div class="img">
+		</div>
+		<div class="login-content">
+			<form action="" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<h2 class="title">Iniciar Sesion</h2>
+				<!--<h2 class="title">Iniciar Sesion</h2>
+
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Correo electrónico</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a class="ocontraseña" href="#">¿Olvido su contraseña?</a>
+            	<input type="submit" class="btn" value="Iniciar Sesión">
+				<a class="tcuenta" href="registro.html" >¿Necesitas tiene una cuenta?</a>-->
+				{{form | crispy}}
+				<input type="submit" class="btn" value="Iniciar Sesión">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

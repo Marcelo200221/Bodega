@@ -27,6 +27,8 @@
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Cerrar sesion</button>
     </form>
+    {% else %}
+    
     {%endif%}
     <!--<img class="wave" src="img/wave.png">-->
     <div class="container mt-5">
@@ -200,6 +202,7 @@
                 {%else%}
                 <h1>Inicia sesion para ver y modificar productos</h1>
                 <a href="{% url 'login'%}" class="btn btn-danger">Iniciar sesion</a>
+                <a href="registrar" class="btn btn-warning">Registrarse</a>
                 {%endif%}
            </form>
        </div>

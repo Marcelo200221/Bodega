@@ -103,7 +103,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #FFE92F;
+	background-color: rgb(255, 151, 0);
 	transition: .4s;
 }
 
@@ -125,7 +125,7 @@ form{
 }
 
 .input-div.focus > .i > i{
-	color: #FFE92F;
+	color: rgb(255, 151, 0);
 }
 
 .input-div > div > input{
@@ -139,7 +139,7 @@ form{
 	background: none;
 	padding: 0.5rem 0.7rem;
 	font-size: 1.2rem;
-	color: #555;
+	color: #ffffff;
 	font-family: 'poppins', sans-serif;
 }
 
@@ -151,13 +151,13 @@ a{
 	display: block;
 	text-align: left;
 	text-decoration: none;
-	color: #999;
+	color: #ffffff;
 	font-size: 0.9rem;
 	transition: .3s;
 }
 
 a:hover{
-	color: #FFE92F;
+	color: rgb(255, 151, 0);
 }
 
 .btn{
@@ -167,7 +167,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #FFE92F, #FFE113, #FFE92F);
+	background-image: linear-gradient(to right, rgb(255, 151, 0), rgb(210, 103, 0), rgb(255, 151, 0));
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
@@ -179,6 +179,7 @@ a:hover{
 }
 .btn:hover{
 	background-position: right;
+	color: #fff;
 }
 
 

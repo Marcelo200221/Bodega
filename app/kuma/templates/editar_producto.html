@@ -7,65 +7,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/33024f503b98e8c48e99476ac919ddd3?family=Sophisto+OT+W01+DGauge" rel="stylesheet">
     <!--<link rel="stylesheet" href="{% static 'CSS/style-registro.css'%}">-->
     <link rel="stylesheet" href="{% static 'CSS/style.css'%}">
+
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
-    <title>Agregar producto</title>
+    <title>Kuma! Editar producto</title>
 </head>
-<body>
-    <button class="switch" id="switch">
-		<span>
-		  <i class="fas fa-sun"></i>
-		</span>
-		<span>
-		  <i class="fas fa-moon"></i>
-		</span>
-	  </button>
-    <img class="wave" src="img/wave.png">
-    <div class="container mt-5">
-        <div class="img">
 
-        </div>
+<header>
+
+    <div class="nav-container">
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1 class="navbar-logo"><strong>Kuma.</strong></h1>
+            </div>
+            <div class="navbar-right">
+                <h1 class="ver-carrito" id="verCarrito"> 
+                </h1>
+                <button class="switch" id="switch">
+                    <span>
+                        <i class="fas fa-sun"></i>
+                    </span>
+                    <span>
+                        <i class="fas fa-moon"></i>
+                    </span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
+<body>
+
         <div class="register-content">
             <form action="/editarProductoForm" id="formularioProducto" enctype="multipart/form-data" method="post"> {% csrf_token %}
-                <h2>Editar productos</h2>
-                <br>
-                <div class="row">
+               
+                <div class="nav-container2">
+                    <div class="navbar2">
+                        <h2 class="titulo_2">Editar Producto</h2>
+                    </div>
 
+            <div class="container-agregar">
+                <div class="row">
                     <div class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-key"></i>
-                            </div>
                             <div class="div">
-                                <h5>Codigo del Producto:</h5>
+                                <i class="fa fa-key">  <label for="txtSku">Codigo del Producto:</label></i>
                                 <input readonly value="{{prod.sku}}" name="txtSku" id="txtSku" class="form-control input"  type="text">
-                                
                             </div>
                         </div>
                     </div>
 
                     <div class="col-m5">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-dog"></i>
-                            </div>
                             <div class="div">
-                                <h5>Nombre del producto:</h5> 
+                                <i class="fa fa-quote-left">  <label for="txtNombre">Nombre del producto:</label></i>
                                 <input value="{{prod.nombre}}" name="producto" id="txtProducto" class="form-control input"  type="text">  
                                 
                             </div>  
                         </div>   
                     </div>
 
-                    <div class="col">
+                    <div id="label_descripcion" class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-money-bill"></i>
-                            </div>
                             <div class="div">
-                                <h5>Descripción:</h5>
+                                <i class="fa fa-clipboard">  <label for="txtDescripcion">Descripcion:</label></i>
                                 <input value="{{prod.descripcion}}" name="descripcion" id="txtDescripción" class="form-control input"  type="text">
                             </div>
                         </div>
@@ -73,11 +82,8 @@
 
                     <div class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-money-bill"></i>
-                            </div>
                             <div class="div">
-                                <h5>Precio:</h5>
+                                <i class="fa fa-money-bill">  <label for="txtPrecio">Precio:</label></i>
                                 <input value="{{prod.precio}}" name="precio" id="txtPrecio" class="form-control input"  type="text">
                             </div>
                         </div>
@@ -85,11 +91,8 @@
 
                     <div class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-money-bill"></i>
-                            </div>
                             <div class="div">
-                                <h5>Stock:</h5>
+                                <i class="fa fa-hashtag">  <label for="txtStock">Stock:</label></i>
                                 <input value="{{prod.stock}}"name="stock" id="txtStock" class="form-control input"  type="text">
                             </div>
                         </div>
@@ -97,11 +100,8 @@
 
                     <div class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-money-bill"></i>
-                            </div>
                             <div class="div">
-                                <h5>Fecha de vencimiento (solo para productos que la requieran):</h5>
+                                <i class="fa fa-calendar">  <label for="fechaVencimientoSel">Fecha de vencimiento (Opcional):</label></i>
                                 <input value="{{prod.fecha_vencimiento|date:'Y-m-d '}}" name="vencimiento" id="txtVencimiento" class="form-control input"  type="date">
                             </div>
                         </div>
@@ -109,11 +109,8 @@
 
                     <div class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-image"></i>
-                            </div>
                             <div class="div">
-                                <h5>Imagen Producto:</h5>
+                                <i class="fa fa-image">  <label for="txtImg">Imagen: </label></i>
                                 <img src="{{prod.image_url.url}}" alt="">
                                 <input name="Imagen" id="txtImage" class="form-control input"  type="file">
                             </div>
@@ -122,14 +119,10 @@
 
                     <div class="col">
                         <div class="input-div one">
-                            <div class="i">
-                                <i class="fa fa-money-bill"></i>
-                            </div>
                             <div class="div">
-                                <h5>Categorias:</h5>
+                                <i class="fa fa-list">  <label for="cmbCategoria">Categoria:</label></i> 
+                                <option disabled selected></option>
                                 <select name="cmdCategoria" id="cmbCategoria">
-                                    <option disabled >Seleccione</option>
-
                                     {% for c in cate %}
                                     <option value="{{c.categoria_id}}" {% if categoria_id == c.categoria_id %} selected {% endif %}>{{c.nombre}}</option>
                                     {% endfor %}
@@ -138,7 +131,14 @@
                         </div>
                     </div>
                 </div>
-                <button id="btn-agrega" class="btn btn-primary mt-5">Editar</button>
+
+                <div class="input-div one">
+                    <div id="botones_guardar" class="div">
+                        <button id="btn-agrega" class="btn btn-primary mt-5">Editar</button>
+                    </div>
+                </div>
+
+            </div>
            </form>
         </div>
     </div>
